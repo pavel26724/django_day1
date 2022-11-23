@@ -1,4 +1,4 @@
-    <!doctype html>
+<!doctype html>
 {% load static %}
 <html lang="ru" class="h-100">
 
@@ -67,8 +67,7 @@
 
         <div class="row">
             <div class="col">
-                <p>На данной страницы будут отображаться все созданные сниппеты.</p>
-                <p>Пока тут просто пример, но скоро заменим реальными сниппетами из БД!</p>
+                <p>На данной странице отображаются все созданные сниппеты.</p>
                 <hr>
             </div>
         </div>
@@ -85,17 +84,14 @@
                     </thead>
                     <tbody>
 
-                    <tr>
-                        <td scope="row">1</td>
-                        <td><a href="/snippets/1">Пример сниппета</a></td>
-                        <td>23.05.2019 11:32</td>
-                    </tr>
+                    {% for snippet in snippets %}
+                        <tr>
+                            <td scope="row">{{ snippet.id }}</td>
+                            <td><a href="...">{{ snippet.name }}</a></td>
+                            <td>{{ snippet.creation_date }}</td>
+                        </tr>
+                    {% endfor %}
 
-                    <tr>
-                        <td scope="row">2</td>
-                        <td><a href="/snippets/2">И ещё один пример</a></td>
-                        <td>23.05.2019 11:34</td>
-                    </tr>
 
                     </tbody>
                 </table>
